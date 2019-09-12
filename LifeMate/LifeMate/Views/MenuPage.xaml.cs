@@ -23,8 +23,7 @@ namespace LifeMate.Views
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="Profile" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="Updated?" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="next?" }
+                new HomeMenuItem {Id = MenuItemType.About, Title="Updated?" }
             };
 
             ListViewMenu.ItemsSource = menuItems;
