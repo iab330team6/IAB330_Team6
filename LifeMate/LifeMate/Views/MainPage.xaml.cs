@@ -36,6 +36,12 @@ namespace LifeMate.Views
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
+                    case (int)MenuItemType.Profile:
+                        MenuPages.Add(id, new NavigationPage(new ProfilePage()));
+                        break;
+                    case (int)MenuItemType.Calendar:
+                        MenuPages.Add(id, new NavigationPage(new CalendarPage()));
+                        break;
                 }
             }
 
