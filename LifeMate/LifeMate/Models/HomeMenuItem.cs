@@ -7,7 +7,9 @@ namespace LifeMate.Models
     public enum MenuItemType
     {
         Browse,
-        About
+        About,
+        Calendar,
+        Profile
     }
     public class HomeMenuItem
     {
