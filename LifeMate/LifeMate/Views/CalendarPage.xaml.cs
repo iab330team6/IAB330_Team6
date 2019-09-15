@@ -35,29 +35,19 @@ namespace LifeMate.Views
             {
                 Text = "2019",
                 BackgroundColor = Color.WhiteSmoke,
-                HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.CenterAndExpand,
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center
             };
 
-            Label blank = new Label()
-            {
-                Text = " ",
-                BackgroundColor = Color.White,
-                HorizontalOptions = LayoutOptions.Start,
-                VerticalOptions = LayoutOptions.Center,
-                VerticalTextAlignment = TextAlignment.Start,
-                HorizontalTextAlignment = TextAlignment.Start
-            };
-
-            Button profilePicHolder = new Button()
+            Button profilePicHolder = new Button() // This will be changed to a profile pic rather than a button?
             {
                 Text = "PP",
                 WidthRequest = 100,
                 HeightRequest = 100,
-                HorizontalOptions = Xamarin.Forms.LayoutOptions.Center,
-                VerticalOptions = Xamarin.Forms.LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
                 BackgroundColor = Color.WhiteSmoke
             };
 
@@ -67,8 +57,8 @@ namespace LifeMate.Views
                 Text = "Birthdays",
                 WidthRequest = 120,
                 HeightRequest = 50,
-                HorizontalOptions = Xamarin.Forms.LayoutOptions.Center,
-                VerticalOptions = Xamarin.Forms.LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
                 BackgroundColor = Color.WhiteSmoke
             };
 
@@ -77,8 +67,8 @@ namespace LifeMate.Views
                 Text = "Exercise",
                 WidthRequest = 90,
                 HeightRequest = 50,
-                HorizontalOptions = Xamarin.Forms.LayoutOptions.Center,
-                VerticalOptions = Xamarin.Forms.LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
                 BackgroundColor = Color.WhiteSmoke
             };
 
@@ -87,8 +77,8 @@ namespace LifeMate.Views
                 Text = "Alarm",
                 WidthRequest = 70,
                 HeightRequest = 50,
-                HorizontalOptions = Xamarin.Forms.LayoutOptions.Center,
-                VerticalOptions = Xamarin.Forms.LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
                 BackgroundColor = Color.WhiteSmoke
             };
 
@@ -97,8 +87,8 @@ namespace LifeMate.Views
                 Text = "Work",
                 WidthRequest = 70,
                 HeightRequest = 50,
-                HorizontalOptions = Xamarin.Forms.LayoutOptions.Center,
-                VerticalOptions = Xamarin.Forms.LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
                 BackgroundColor = Color.WhiteSmoke
             };
 
@@ -112,9 +102,7 @@ namespace LifeMate.Views
                 HorizontalTextAlignment = TextAlignment.Start
             };
 
-            grid.Children.Add(yearViewer, 0, 0);
-            grid.Children.Add(blank, 0, 4);
-            
+            grid.Children.Add(yearViewer, 0, 4, 0, 1);
 
             for (int rowindex = 0; rowindex < 3; rowindex++)
             {
@@ -135,20 +123,19 @@ namespace LifeMate.Views
                 }
             }
 
-
-            grid.RowDefinitions.Add(new RowDefinition { Height = 50 });
-            grid.RowDefinitions.Add(new RowDefinition { Height = 50 });
-            grid.RowDefinitions.Add(new RowDefinition { Height = 50 });
-            grid.RowDefinitions.Add(new RowDefinition { Height = 50 });
-            grid.RowDefinitions.Add(new RowDefinition { Height = 50 });
-            grid.RowDefinitions.Add(new RowDefinition { Height = 50 });
-
+            grid.RowDefinitions.Add(new RowDefinition() { Height = 100 });
             grid.Children.Add(profilePicHolder, 0, 5);
-            grid.Children.Add(viewer, 1, 6, 3, 8);
+            grid.RowDefinitions.Add(new RowDefinition() { Height = 50 });
+            grid.Children.Add(viewer, 1, 4, 3, 9); // column, row, width?, height?
+            grid.RowDefinitions.Add(new RowDefinition() { Height = 50 });
             grid.Children.Add(birthdays, 0, 6);
+            grid.RowDefinitions.Add(new RowDefinition() { Height = 50 });
             grid.Children.Add(exercise, 0, 7);
+            grid.RowDefinitions.Add(new RowDefinition() { Height = 50 });
             grid.Children.Add(alarm, 0, 8);
+            grid.RowDefinitions.Add(new RowDefinition() { Height = 50 });
             grid.Children.Add(work, 0, 9);
+            grid.RowDefinitions.Add(new RowDefinition() { Height = 50 });
 
             // Grid ScrollView
             calendarScrollView.Content = grid;
