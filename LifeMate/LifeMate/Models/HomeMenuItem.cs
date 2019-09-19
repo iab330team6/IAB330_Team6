@@ -9,7 +9,8 @@ namespace LifeMate.Models
         Browse,
         About,
         Calendar,
-        Profile
+        Profile,
+        CalendarTest
     }
     public class HomeMenuItem
     {
