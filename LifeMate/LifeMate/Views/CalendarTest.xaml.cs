@@ -19,8 +19,8 @@ namespace LifeMate.Views
             SfCalendar calendar = new SfCalendar();
 
             // Restrict Dates
-            calendar.MoveToDate = new DateTime(2019, 12, 31);
-            calendar.MinDate = new DateTime(2019, 10, 25);
+            calendar.MoveToDate = new DateTime(2019, 1, 31);
+            calendar.MinDate = new DateTime(2019, 1, 1);
             calendar.MaxDate = new DateTime(2019, 12, 31);
 
             // Set Blackout Dates
