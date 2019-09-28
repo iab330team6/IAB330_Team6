@@ -11,7 +11,7 @@
     <ContentPage.Content>
         <syncfusion:SfSchedule x:Name="schedule" 
         DataSource = "{Binding Meetings}"
-        ScheduleView = "MonthView" >
+        ScheduleView = "MonthView">
             <syncfusion:SfSchedule.BindingContext>
                 <local:CalendarViewModel/>
             </syncfusion:SfSchedule.BindingContext>
