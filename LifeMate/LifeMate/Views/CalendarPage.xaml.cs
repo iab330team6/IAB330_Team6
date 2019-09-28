@@ -27,13 +27,19 @@ namespace LifeMate.Views
             DateTime maxDate = new DateTime(currentDate.Year + 1, currentDate.Month, currentDate.Day, 10, 0, 0);
             schedule.MaxDisplayDate = maxDate;
 
+            schedule.HeaderTapped += Handle_HeaderTapped;
             schedule.CellTapped += CellTappedEventHandler;
-
+            
         }
 
         private void CellTappedEventHandler(object sender, CellTappedEventArgs e)
         {
             schedule.ScheduleView = ScheduleView.DayView;
+        }
+
+        private void Handle_HeaderTapped(object sender, HeaderTappedEventArgs e)
+        {
+            schedule.ScheduleView = ScheduleView.MonthView;
         }
 
     }
