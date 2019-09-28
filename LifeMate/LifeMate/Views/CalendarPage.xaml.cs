@@ -17,14 +17,23 @@ namespace LifeMate.Views
         public CalendarPage()
         {
             InitializeComponent();
-            //schedule = new SfSchedule();
 
-            //schedule.ScheduleView = ScheduleView.MonthView;
-            ////view appointments in inline  
-            //schedule.ShowAppointmentsInline = true;
+            DateTime currentDate = DateTime.Now;
+            //setting minimum display date
+            DateTime minDate = new DateTime(currentDate.Year - 1, currentDate.Month, currentDate.Day, 10, 0, 0);
+            schedule.MinDisplayDate = minDate;
 
+            //setting maximum display date
+            DateTime maxDate = new DateTime(currentDate.Year + 1, currentDate.Month, currentDate.Day, 10, 0, 0);
+            schedule.MaxDisplayDate = maxDate;
 
-            //this.Content = schedule;
+            schedule.CellTapped += CellTappedEventHandler;
+
+        }
+
+        private void CellTappedEventHandler(object sender, CellTappedEventArgs e)
+        {
+            schedule.ScheduleView = ScheduleView.DayView;
         }
 
     }

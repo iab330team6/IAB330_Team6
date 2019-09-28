@@ -4,17 +4,20 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="LifeMate.Views.Calendar"
+             x:Class="LifeMate.Views.CalendarPage"
              xmlns:syncfusion="clr-namespace:Syncfusion.SfSchedule.XForms;assembly=Syncfusion.SfSchedule.XForms"
              xmlns:local="clr-namespace:LifeMate.ViewModels"
              Title="Calendar">
     <ContentPage.Content>
         <syncfusion:SfSchedule x:Name="schedule" 
         DataSource = "{Binding Meetings}"
-        ScheduleView = "WeekView" >
+        ScheduleView = "MonthView" >
             <syncfusion:SfSchedule.BindingContext>
                 <local:CalendarViewModel/>
             </syncfusion:SfSchedule.BindingContext>
+            <syncfusion:SfSchedule.MonthViewSettings>
+                <syncfusion:MonthViewSettings ShowAgendaView="true" />
+            </syncfusion:SfSchedule.MonthViewSettings>
             <syncfusion:SfSchedule.AppointmentMapping>
                 <syncfusion:ScheduleAppointmentMapping
                 ColorMapping="color"
