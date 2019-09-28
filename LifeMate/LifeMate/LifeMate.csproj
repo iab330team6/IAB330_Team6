@@ -18,8 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\Calendar.xaml.cs">
-      <DependentUpon>Calendar.xaml</DependentUpon>
+    <Compile Update="Views\CalendarPage.xaml.cs">
+      <DependentUpon>CalendarPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\ProfilePage.xaml.cs">
       <DependentUpon>ProfilePage.xaml</DependentUpon>
