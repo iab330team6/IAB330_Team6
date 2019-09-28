@@ -28,7 +28,7 @@ namespace LifeMate.Views
             schedule.MaxDisplayDate = maxDate;
 
             schedule.CellTapped += CellTappedEventHandler;
-
+            schedule.HeaderTapped += Handle_HeaderTapped;
         }
 
         private void CellTappedEventHandler(object sender, CellTappedEventArgs e)
@@ -36,5 +36,9 @@ namespace LifeMate.Views
             schedule.ScheduleView = ScheduleView.DayView;
         }
 
+        private void Handle_HeaderTapped(object sender, HeaderTappedEventArgs e)
+        {
+            schedule.ScheduleView = ScheduleView.MonthView;
+        }
     }
 }
