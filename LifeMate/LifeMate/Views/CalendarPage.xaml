@@ -8,9 +8,15 @@
              xmlns:syncfusion="clr-namespace:Syncfusion.SfSchedule.XForms;assembly=Syncfusion.SfSchedule.XForms"
              xmlns:local="clr-namespace:LifeMate.ViewModels"
              Title="Calendar">
+    <ContentPage.BindingContext>
+        <local:CalendarViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="AddItem_Clicked"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <syncfusion:SfSchedule x:Name="schedule" 
-        DataSource = "{Binding Meetings}"
+        DataSource = "{Binding Event}"
         ScheduleView = "MonthView">
             <syncfusion:SfSchedule.BindingContext>
                 <local:CalendarViewModel/>
@@ -20,11 +26,9 @@
             </syncfusion:SfSchedule.MonthViewSettings>
             <syncfusion:SfSchedule.AppointmentMapping>
                 <syncfusion:ScheduleAppointmentMapping
-                ColorMapping="color"
-                EndTimeMapping="To"
-                StartTimeMapping="From"
-                SubjectMapping="EventName"
-                IsAllDayMapping="AllDay"/>
+                EndTimeMapping="EndTime"
+                StartTimeMapping="StartTime"
+                SubjectMapping="Subject"/>
             </syncfusion:SfSchedule.AppointmentMapping>
         </syncfusion:SfSchedule>
     </ContentPage.Content>

@@ -46,5 +46,10 @@ namespace LifeMate.Views
         {
             schedule.ScheduleView = ScheduleView.MonthView;
         }
+
+        private void AddItem_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PopModalAsync(true);
+        }
     }
 }
