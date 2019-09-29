@@ -7,10 +7,8 @@
              x:Class="LifeMate.Views.CalendarPage"
              xmlns:syncfusion="clr-namespace:Syncfusion.SfSchedule.XForms;assembly=Syncfusion.SfSchedule.XForms"
              xmlns:local="clr-namespace:LifeMate.ViewModels"
+             xmlns:dataform="clr-namespace:Syncfusion.XForms.DataForm;assembly=Syncfusion.SfDataForm.XForms"
              Title="Calendar">
-    <ContentPage.BindingContext>
-        <local:CalendarViewModel/>
-    </ContentPage.BindingContext>
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="AddItem_Clicked"/>
     </ContentPage.ToolbarItems>

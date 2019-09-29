@@ -49,7 +49,7 @@ namespace LifeMate.Views
 
         private void AddItem_Clicked(object sender, EventArgs e)
         {
-            Navigation.PopModalAsync(true);
+            Navigation.PushModalAsync(new AddNewEvent(), true);
         }
     }
 }
