@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Input;
 using LifeMate.Views;
-using Syncfusion.SfCalendar.XForms;
+using Syncfusion.SfSchedule.XForms;
 using Xamarin.Forms;
 
 namespace LifeMate.ViewModels
@@ -13,6 +14,7 @@ namespace LifeMate.ViewModels
         public ObservableCollection<Meeting> Meetings { get; set; }
         List<string> eventNameCollection;
         List<Color> colorCollection;
+        public ICommand ScheduleCellLongPressed { get; set; }
 
         public CalendarViewModel()
         {
@@ -21,6 +23,7 @@ namespace LifeMate.ViewModels
             CreateEventNameCollection();
             CreateColorCollection();
             CreateAppointments();
+            ScheduleCellLongPressed = new Command<CellTappedEventArgs>(LongPressed);
         }
 
         /// <summary>
@@ -46,8 +49,8 @@ namespace LifeMate.ViewModels
                         int hour = (randomTime.Next((int)randomTimeCollection[AdditionalAppointmentIndex].X, (int)randomTimeCollection[AdditionalAppointmentIndex].Y));
                         meeting.From = new DateTime(date.Year, date.Month, date.Day, hour, 0, 0);
                         meeting.To = (meeting.From.AddHours(1));
-                        meeting.EventName = eventNameCollection[randomTime.Next(9)];
-                        meeting.color = colorCollection[randomTime.Next(9)];
+                        meeting.EventName = eventNameCollection[randomTime.Next(3)];
+                        meeting.color = colorCollection[randomTime.Next(3)];
                         if (AdditionalAppointmentIndex % 3 == 0)
                             meeting.AllDay = true;
                         Meetings.Add(meeting);
@@ -56,10 +59,10 @@ namespace LifeMate.ViewModels
                 else
                 {
                     Meeting meeting = new Meeting();
-                    meeting.From = new DateTime(date.Year, date.Month, date.Day, randomTime.Next(9, 11), 0, 0);
+                    meeting.From = new DateTime(date.Year, date.Month, date.Day, randomTime.Next(3, 11), 0, 0);
                     meeting.To = (meeting.From.AddHours(1));
-                    meeting.EventName = eventNameCollection[randomTime.Next(9)];
-                    meeting.color = colorCollection[randomTime.Next(9)];
+                    meeting.EventName = eventNameCollection[randomTime.Next(3)];
+                    meeting.color = colorCollection[randomTime.Next(3)];
                     Meetings.Add(meeting);
                 }
             }
@@ -72,15 +75,15 @@ namespace LifeMate.ViewModels
         {
             eventNameCollection = new List<string>();
             eventNameCollection.Add("General Meeting");
-            eventNameCollection.Add("Plan Execution");
-            eventNameCollection.Add("Project Plan");
-            eventNameCollection.Add("Consulting");
-            eventNameCollection.Add("Performance Check");
-            eventNameCollection.Add("Yoga Therapy");
-            eventNameCollection.Add("Plan Execution");
-            eventNameCollection.Add("Project Plan");
-            eventNameCollection.Add("Consulting");
-            eventNameCollection.Add("Performance Check");
+            eventNameCollection.Add("Work");
+            eventNameCollection.Add("Exercise");
+            eventNameCollection.Add("Wake Up");
+            //eventNameCollection.Add("Performance Check");
+            //eventNameCollection.Add("Yoga Therapy");
+            //eventNameCollection.Add("Plan Execution");
+            //eventNameCollection.Add("Project Plan");
+            //eventNameCollection.Add("Consulting");
+            //eventNameCollection.Add("Performance Check");
         }
 
         /// <summary>  
@@ -93,13 +96,18 @@ namespace LifeMate.ViewModels
             colorCollection.Add(Color.FromHex("#FF00ABA9"));
             colorCollection.Add(Color.FromHex("#FFE671B8"));
             colorCollection.Add(Color.FromHex("#FF1BA1E2"));
-            colorCollection.Add(Color.FromHex("#FFD80073"));
-            colorCollection.Add(Color.FromHex("#FFA2C139"));
-            colorCollection.Add(Color.FromHex("#FFA2C139"));
-            colorCollection.Add(Color.FromHex("#FFD80073"));
-            colorCollection.Add(Color.FromHex("#FF339933"));
-            colorCollection.Add(Color.FromHex("#FFE671B8"));
-            colorCollection.Add(Color.FromHex("#FF00ABA9"));
+            //colorCollection.Add(Color.FromHex("#FFD80073"));
+            //colorCollection.Add(Color.FromHex("#FFA2C139"));
+            //colorCollection.Add(Color.FromHex("#FFA2C139"));
+            //colorCollection.Add(Color.FromHex("#FFD80073"));
+            //colorCollection.Add(Color.FromHex("#FF339933"));
+            //colorCollection.Add(Color.FromHex("#FFE671B8"));
+            //colorCollection.Add(Color.FromHex("#FF00ABA9"));
+        }
+
+        private void LongPressed(CellTappedEventArgs args)
+        {
+            var selectedDateTime = args.Datetime;
         }
 
         /// <summary>
