@@ -6,7 +6,7 @@ namespace LifeMate.Models
 {
     public enum MenuItemType
     {
-        Browse,
+        Main,
         About,
         SleepCalculator,
         Calendar

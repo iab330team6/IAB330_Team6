@@ -24,7 +24,8 @@
                 EndTimeMapping="EndTime"
                 StartTimeMapping="StartTime"
                 LocationMapping="Location"
-                SubjectMapping="Subject"/>
+                SubjectMapping="Subject"
+                />
         </syncfusion:SfSchedule.AppointmentMapping>
     </syncfusion:SfSchedule>
 </ContentPage>
