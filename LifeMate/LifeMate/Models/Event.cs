@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 using Syncfusion.XForms.DataForm;
-
+using Xamarin.Forms;
 namespace LifeMate.Models
 {
     public class Event : INotifyPropertyChanged
@@ -13,7 +13,10 @@ namespace LifeMate.Models
         private string _location;
         private DateTime _startTime;
         private DateTime _endTime;
-        private string _color = "#7BC667";
+        private Color _color;
+
+        private List<Color> GetColors = new List<Color> { Color.Red, Color.Blue, Color.Black, Color.Green };
+
 
         public string Subject
         {
@@ -22,21 +25,7 @@ namespace LifeMate.Models
             {
                 if (value == _subject) return;
                 _subject = value;
-                switch (_subject)
-                {
-                    case "General Meeting":
-                        Color = "#7BC667";
-                        break;  
-                    case "Release Retrospective":
-                        Color = "#9466F2";
-                        break;
-                    case "Sprint Meeting":
-                        Color = "#37AA97";
-                        break;
-                    default:
-                        Color = "#4C3AB9";
-                        break;
-                }
+
                 OnPropertyChanged();
             }
         }
@@ -52,7 +41,8 @@ namespace LifeMate.Models
             }
         }
 
-        public string Color
+        [Display(AutoGenerateField = false)]
+        public Color col
         {
             get => _color;
             set
@@ -62,6 +52,7 @@ namespace LifeMate.Models
                 OnPropertyChanged();
             }
         }
+
 
         #region DataFormSource
         private DateTime _date;
@@ -145,6 +136,8 @@ namespace LifeMate.Models
             EndTime = new DateTime(StartTime.Year, StartTime.Month, StartTime.Day, StartTime.Hour + 1, StartTime.Minute,
                 StartTime
                     .Second);
+            
+
         }
 
         public Event()
@@ -152,12 +145,16 @@ namespace LifeMate.Models
             Date = DateTime.Now;
             InputStartTime = DateTime.Now;
             InputEndTime = DateTime.Now;
+            
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
+            Random random = new Random();
+            int number = random.Next(0, 4);
+            col = GetColors[number];
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
