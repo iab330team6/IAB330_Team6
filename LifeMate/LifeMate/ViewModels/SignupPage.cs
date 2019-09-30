@@ -18,9 +18,22 @@ namespace LifeMate.Views
     {
         private Entry userEntry;
         private Entry passwordEntry;
-        private Button createBtn;
+        private Button createBtn; 
 
         string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "lifeMateDB.db");
+
+        public System.Data.SQLite.SQLiteConnection DbConnection()
+        {
+            var dbName = "CustomersDb.db3";
+            string personalFolder = 
+                System.Environment.GetFolderPath
+                (Environment.SpecialFolder.Personal);
+            string libraryFolder =
+                Path.Combine(personalFolder, ". .", "Library");
+            var path = Path.Combine(libraryFolder, dbName);
+            return new System.Data.SQLite.SQLiteConnection(path);
+
+        }
 
         public SignupPage()
         {
@@ -48,19 +61,19 @@ namespace LifeMate.Views
 
         private async void createBtn_Clicked(object sender, EventArgs e)
         {
-            var db = new SQLite.SQLiteConnection(dbPath);
+            /*var db = new SQLite.SQLiteConnection(dbPath);
             db.CreateTable<LoginInfo>();
 
-            var maxPK = db.Table<LoginInfo>().OrderByDescending(c => c.username).FirstOrDefault();
+            var maxPK = db.Table<LoginInfo>().OrderByDescending(c => c.username).FirstOrDefault();*/
 
             LoginInfo loginInfo = new LoginInfo()
             {
                 username = userEntry.Text,
                 password = passwordEntry.Text
             };
-            db.Insert(loginInfo);
-            await DisplayAlert(null, "Account: " + loginInfo.username + "created.", "Ok");
-            await Navigation.PopAsync();
+            //db.Insert(loginInfo);
+            await DisplayAlert(null, "Account: " + loginInfo.username + " created.", "Ok");
+            await Navigation.PushModalAsync(new LoginPage1(), true);
         }
     }
 }

@@ -20,10 +20,11 @@ namespace LifeMate.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Main, Title="Main" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="About" },
+                new HomeMenuItem {Id = MenuItemType.Main, Title="Daily View" },
+                new HomeMenuItem {Id = MenuItemType.Calendar, Title="Monthly View" },
                 new HomeMenuItem {Id = MenuItemType.SleepCalculator, Title="Sleep Calculator" },
-                new HomeMenuItem {Id = MenuItemType.Calendar, Title="Calendar" }
+                new HomeMenuItem {Id = MenuItemType.Login, Title="Login"}
+                
             };
 
             ListViewMenu.ItemsSource = menuItems;

@@ -7,8 +7,11 @@
              x:Class="LifeMate.Views.LoginPage1">
     <ContentPage.Content>
         <StackLayout>
-            <Button x:Name="btnSignup" Text= "Signup" Clicked="btnSignup_Clicked" ></Button>
-            <Button x:Name="btnLogin" Text= "Login" Clicked="btnSignup_Clicked" ></Button>
+            <Entry Placeholder = "Username" Margin="10"></Entry>
+            <Entry Placeholder = "Password" Margin="10"></Entry>
+            <Button Margin="10" Padding="10" x:Name="btnSignup" Text= "Signup" Clicked="btnSignup_Clicked" ></Button>
+            <Button Margin="10" Padding="10" x:Name="btnLogin" Text= "Login" Clicked="btnLogin_Clicked" ></Button>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

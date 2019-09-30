@@ -22,6 +22,10 @@ namespace LifeMate.Views
             Navigation.PushModalAsync(new SignupPage(), true);
         }
 
+        private void btnLogin_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new MainPage(), true);
+        }
 
     }
 }

@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:LifeMate.ViewModels"
              mc:Ignorable="d"
              x:Class="LifeMate.Views.CalendarPage"
-             Title="Calendar">
+             Title="Monthly View">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="AddItem_Clicked"/>
     </ContentPage.ToolbarItems>
@@ -16,7 +16,7 @@
     ScheduleView = "MonthView"
     ShowAppointmentsInline="True">
         <syncfusion:SfSchedule.BindingContext>
-            <local:CalendarViewModel/>
+            
         </syncfusion:SfSchedule.BindingContext>
         <syncfusion:SfSchedule.AppointmentMapping>
             <syncfusion:ScheduleAppointmentMapping

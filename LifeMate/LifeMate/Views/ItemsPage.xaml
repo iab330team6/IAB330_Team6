@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:LifeMate.ViewModels"
              mc:Ignorable="d"
              x:Class="LifeMate.Views.ItemsPage"
-             Title="Main">
+             Title="Daily View">
     <syncfusion:SfSchedule x:Name="schedule" 
         DataSource = "{Binding Event}"
         ScheduleView = "WeekView"

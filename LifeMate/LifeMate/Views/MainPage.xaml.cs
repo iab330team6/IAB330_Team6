@@ -33,14 +33,14 @@ namespace LifeMate.Views
                     case (int)MenuItemType.Main:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
-                    case (int)MenuItemType.About:
-                        MenuPages.Add(id, new NavigationPage(new AboutPage()));
-                        break;
                     case (int)MenuItemType.SleepCalculator:
                         MenuPages.Add(id, new NavigationPage(new SleepCalculatorPage()));
                         break;
                     case (int)MenuItemType.Calendar:
                         MenuPages.Add(id, new NavigationPage(new CalendarPage()));
+                        break;
+                    case (int)MenuItemType.Login:
+                        MenuPages.Add(id, new NavigationPage(new LoginPage1()));
                         break;
                 }
             }
