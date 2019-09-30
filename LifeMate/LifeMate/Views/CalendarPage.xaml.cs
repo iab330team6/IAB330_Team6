@@ -44,6 +44,7 @@ namespace LifeMate.Views
         private void AddItem_Clicked(object sender, EventArgs e)
         {
             Navigation.PushModalAsync(new AddNewEvent(), true);
+            //Test New Commit/New Item
         }
     }
 }
