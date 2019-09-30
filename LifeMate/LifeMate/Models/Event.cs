@@ -26,7 +26,7 @@ namespace LifeMate.Models
                 {
                     case "General Meeting":
                         Color = "#7BC667";
-                        break;
+                        break;  
                     case "Release Retrospective":
                         Color = "#9466F2";
                         break;
