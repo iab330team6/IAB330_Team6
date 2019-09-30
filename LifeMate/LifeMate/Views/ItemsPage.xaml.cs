@@ -18,38 +18,19 @@ namespace LifeMate.Views
     [DesignTimeVisible(false)]
     public partial class ItemsPage : ContentPage
     {
-        ItemsViewModel viewModel;
-
         public ItemsPage()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ItemsViewModel();
-        }
+            DateTime currentDate = DateTime.Now;
+            //setting minimum display date
+            DateTime minDate = new DateTime(currentDate.Year - 1, currentDate.Month, currentDate.Day, 10, 0, 0);
+            schedule.MinDisplayDate = minDate;
 
-        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
-        {
-            var item = args.SelectedItem as Item;
-            if (item == null)
-                return;
+            //setting maximum display date
+            DateTime maxDate = new DateTime(currentDate.Year + 1, currentDate.Month, currentDate.Day, 10, 0, 0);
+            schedule.MaxDisplayDate = maxDate;
 
-            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
-
-            // Manually deselect item.
-            ItemsListView.SelectedItem = null;
-        }
-
-        async void AddItem_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            if (viewModel.Items.Count == 0)
-                viewModel.LoadItemsCommand.Execute(null);
         }
     }
 }
