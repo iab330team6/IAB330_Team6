@@ -28,18 +28,12 @@ namespace LifeMate.Views
             schedule.MaxDisplayDate = maxDate;
 
             schedule.CellDoubleTapped += CellDoubleTappedEventHandler;
-            schedule.CellLongPressed += CellLongPressed;
             schedule.HeaderTapped += Handle_HeaderTapped;
         }
 
         private void CellDoubleTappedEventHandler(object sender, CellTappedEventArgs e)
         {
             schedule.ScheduleView = ScheduleView.DayView;
-        }
-
-        private void CellLongPressed(object sender, CellTappedEventArgs e)
-        {
-            schedule.ScheduleView = ScheduleView.MonthView;
         }
 
         private void Handle_HeaderTapped(object sender, HeaderTappedEventArgs e)

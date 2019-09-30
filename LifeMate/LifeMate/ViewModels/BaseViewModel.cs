@@ -13,12 +13,6 @@ namespace LifeMate.ViewModels
     public class BaseViewModel : INotifyPropertyChanged
     {
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
-        public IList<Event> Meetings { get; set; }
-
-        public BaseViewModel()
-        {
-            Meetings = DataService.Instance.Data;
-        }
 
         bool isBusy = false;
         public bool IsBusy

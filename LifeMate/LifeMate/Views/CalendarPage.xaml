@@ -15,12 +15,13 @@
     <ContentPage.Content>
         <syncfusion:SfSchedule x:Name="schedule" 
         DataSource = "{Binding Event}"
-        ScheduleView = "MonthView">
+        ScheduleView = "MonthView"
+        ShowAppointmentsInline="True">
             <syncfusion:SfSchedule.BindingContext>
                 <local:CalendarViewModel/>
             </syncfusion:SfSchedule.BindingContext>
             <syncfusion:SfSchedule.MonthViewSettings>
-                <syncfusion:MonthViewSettings ShowAgendaView="true" />
+                <syncfusion:MonthViewSettings ShowAgendaView="true"/>
             </syncfusion:SfSchedule.MonthViewSettings>
             <syncfusion:SfSchedule.AppointmentMapping>
                 <syncfusion:ScheduleAppointmentMapping

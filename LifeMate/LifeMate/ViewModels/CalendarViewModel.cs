@@ -3,27 +3,28 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Input;
+using LifeMate.Models;
+using LifeMate.Services;
 using LifeMate.Views;
 using Syncfusion.SfSchedule.XForms;
 using Xamarin.Forms;
 
 namespace LifeMate.ViewModels
 {
-    public class CalendarViewModel : BaseViewModel
+    public class CalendarViewModel : EventModelBase
     {
         //public ObservableCollection<Meeting> Meetings { get; set; }
         //List<string> eventNameCollection;
         //List<Color> colorCollection;
-        //public ICommand ScheduleCellLongPressed { get; set; }
 
-        public CalendarViewModel()
-        {
-            Title = "Calendar";
+        //public CalendarViewModel()
+        //{
+            //Title = "Calendar";
             //Meetings = new ObservableCollection<Meeting>();
             //CreateEventNameCollection();
             //CreateColorCollection();
             //CreateAppointments();
-        }
+        //}
 
         /// <summary>
         /// Creates meetings and stores in a collection.  
