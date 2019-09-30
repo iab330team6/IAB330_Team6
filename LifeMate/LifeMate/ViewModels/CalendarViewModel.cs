@@ -17,14 +17,14 @@ namespace LifeMate.ViewModels
         //List<string> eventNameCollection;
         //List<Color> colorCollection;
 
-        //public CalendarViewModel()
-        //{
+        public CalendarViewModel()
+        {
             //Title = "Calendar";
             //Meetings = new ObservableCollection<Meeting>();
             //CreateEventNameCollection();
             //CreateColorCollection();
             //CreateAppointments();
-        //}
+        }
 
         /// <summary>
         /// Creates meetings and stores in a collection.  

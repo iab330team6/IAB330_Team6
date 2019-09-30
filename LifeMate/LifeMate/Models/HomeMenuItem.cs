@@ -8,7 +8,7 @@ namespace LifeMate.Models
     {
         Browse,
         About,
-        Profile,
+        SleepCalculator,
         Calendar
     }
     public class HomeMenuItem

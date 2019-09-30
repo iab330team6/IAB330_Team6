@@ -22,7 +22,7 @@ namespace LifeMate.Views
             {
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" },
-                new HomeMenuItem {Id = MenuItemType.Profile, Title="Profile" },
+                new HomeMenuItem {Id = MenuItemType.SleepCalculator, Title="Sleep Calculator" },
                 new HomeMenuItem {Id = MenuItemType.Calendar, Title="Calendar" }
             };
 
