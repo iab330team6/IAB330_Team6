@@ -20,7 +20,8 @@
                 EndTimeMapping="EndTime"
                 StartTimeMapping="StartTime"
                 LocationMapping="Location"
-                SubjectMapping="Subject"/>
+                SubjectMapping="Subject"
+                ColorMapping="col"/>
         </syncfusion:SfSchedule.AppointmentMapping>
     </syncfusion:SfSchedule>
 
