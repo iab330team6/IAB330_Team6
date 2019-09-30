@@ -20,13 +20,15 @@ namespace LifeMate.Views
             stackLayout.Children.Add(btnLogin);
             stackLayout.Children.Add(btnSignup);
 
+            //btnSignup.Clicked += btnSignup_Clicked();
+
             Content = stackLayout;
 
         }
 
-        private async void btnSignup_Clicked(object sender, EventArgs e)
+        /*private EventHandler btnSignup_Clicked()
         {
-            await Navigation.PushAsync(new SignupPage());
-        }
+           Navigation.PushModalAsync(new SignupPage());
+        }*/
     }
 }
