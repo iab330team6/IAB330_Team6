@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
     <PackageReference Include="Syncfusion.Xamarin.SfDataForm" Version="17.2.0.51" />
     <PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="17.2.0.51" />

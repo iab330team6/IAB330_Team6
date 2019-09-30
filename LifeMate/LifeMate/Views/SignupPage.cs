@@ -1,4 +1,4 @@
-﻿using Microsoft.Data.Sqlite;
+﻿//using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,8 +8,8 @@ using SQLitePCL;
 using SQLite;
 
 using Xamarin.Forms;
-using CoreData;
-using System.Data.SQLite;
+//using CoreData;
+//using System.Data.SQLite;
 using LifeMate.Models;
 
 namespace LifeMate.Views

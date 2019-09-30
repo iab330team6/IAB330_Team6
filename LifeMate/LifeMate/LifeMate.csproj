@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
     <PackageReference Include="Syncfusion.Xamarin.SfCalendar" Version="17.2.0.51" />
     <PackageReference Include="Syncfusion.Xamarin.SfDataForm" Version="17.2.0.51" />
     <PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="17.2.0.51" />
