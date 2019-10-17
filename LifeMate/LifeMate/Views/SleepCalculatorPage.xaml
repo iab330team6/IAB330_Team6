@@ -6,17 +6,36 @@
              xmlns:syncfusion="clr-namespace:Syncfusion.SfPicker.XForms;assembly=Syncfusion.SfPicker.XForms"
              xmlns:local="clr-namespace:LifeMate.ViewModels"
              xmlns:local1="clr-namespace:LifeMate.Models"
+             xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
              mc:Ignorable="d"
              x:Class="LifeMate.Views.SleepCalculatorPage"
              Title="Sleep Calculator">
     <ContentPage.BindingContext>
-        <local:TimePickerViewModel />
+        <local:TimePickerViewModel/>
     </ContentPage.BindingContext>
-    <Grid>
+    <StackLayout>
+        <Picker x:Name="ageSelector"
+            Title="How old are you?"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>18</x:String>
+                    <x:String>19</x:String>
+                    <x:String>20</x:String>
+                    <x:String>21</x:String>
+                    <x:String>22</x:String>
+                    <x:String>23</x:String>
+                    <x:String>24</x:String>
+                    <x:String>25</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        
         <Button
             Clicked="Button_Clicked"
-            HeightRequest="50"
-            VerticalOptions="Center"
+            HeightRequest="40"
+            VerticalOptions="End"
             HorizontalOptions="Center"
             Text="I WANT TO WAKE UP AT"
             WidthRequest="200" />
@@ -31,5 +50,5 @@
             PickerMode="Dialog"
             PickerWidth="300" 
             SelectedItem="{Binding SelectedTime,Mode=TwoWay}"/>
-    </Grid>
+    </StackLayout>
 </ContentPage>
