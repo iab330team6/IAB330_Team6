@@ -13,7 +13,7 @@ namespace LifeMate.ViewModels
                                                                         "Suggested Activity: \nWork", "Suggested Activity: \nRelax" };
 
 
-        public Event NewMeeting { get; set; } = new Event(Random_subject[ItemsPage.number], "");
+        public Event NewMeeting { get; set; } = new Event(Random_subject[ItemsPage.number], "", "");
 
         public Command Submit { get; set; }
 

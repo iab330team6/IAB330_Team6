@@ -11,6 +11,7 @@ namespace LifeMate.Models
     {
         private string _subject;
         private string _location;
+        private string _description;
         private DateTime _startTime;
         private DateTime _endTime;
         private Color _color;
@@ -27,6 +28,18 @@ namespace LifeMate.Models
             {
                 if (value == _subject) return;
                 _subject = value;
+
+                OnPropertyChanged();
+            }
+        }
+
+        public string Description
+        {
+            get => _description;
+            set
+            {
+                if (value == _description) return;
+                _description = value;
 
                 OnPropertyChanged();
             }
@@ -130,10 +143,11 @@ namespace LifeMate.Models
             }
         }
 
-        public Event(string subject, string location)
+        public Event(string subject, string location, string description)
         {
             Subject = subject;
             Location = location;
+            Description = description;
             Date = DateTime.Now;
             InputStartTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour + ItemsPage.number, DateTime.Now.Minute,
                 DateTime.Now
