@@ -12,19 +12,19 @@
         <ToolbarItem Text="Add" Clicked="AddItem_Clicked"/>
     </ContentPage.ToolbarItems>
     <syncfusion:SfSchedule x:Name="schedule" 
-    DataSource = "{Binding Event}"
-    ScheduleView = "MonthView"
-    ShowAppointmentsInline="True">
+        DataSource = "{Binding Event}"
+        ScheduleView = "MonthView"
+        ShowAppointmentsInline="True">
         <syncfusion:SfSchedule.BindingContext>
-            
+            <local:MonthViewModel/>
         </syncfusion:SfSchedule.BindingContext>
         <syncfusion:SfSchedule.AppointmentMapping>
-            <syncfusion:ScheduleAppointmentMapping
-            EndTimeMapping="EndTime"
-            StartTimeMapping="StartTime"
-            LocationMapping="Location"
-            SubjectMapping="Subject"
-            ColorMapping="col"/>
-        </syncfusion:SfSchedule.AppointmentMapping>
+                <syncfusion:ScheduleAppointmentMapping
+                EndTimeMapping="EndTime"
+                StartTimeMapping="StartTime"
+                LocationMapping="Location"
+                SubjectMapping="Subject"
+                ColorMapping="col"/>
+            </syncfusion:SfSchedule.AppointmentMapping>
     </syncfusion:SfSchedule>
 </ContentPage>
