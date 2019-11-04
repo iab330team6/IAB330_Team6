@@ -24,7 +24,8 @@ namespace LifeMate
                 DependencyService.Register<MockDataStore>();
             else
                 DependencyService.Register<AzureDataStore>();
-            MainPage = new MainPage();
+
+            MainPage = new LoginPage1();
         }
 
         protected override void OnStart()

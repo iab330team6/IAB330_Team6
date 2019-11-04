@@ -12,6 +12,8 @@ namespace LifeMate.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage1 : ContentPage
     {
+        private MainPage MainPage;
+
         public LoginPage1()
         {
             InitializeComponent();
@@ -24,8 +26,7 @@ namespace LifeMate.Views
 
         private void btnLogin_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new MainPage(), true);
+            App.Current.MainPage = new MainPage();
         }
-
     }
 }
