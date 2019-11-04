@@ -33,7 +33,7 @@ namespace LifeMate.Views
 
         private void CellDoubleTappedEventHandler(object sender, CellTappedEventArgs e)
         {
-            schedule.ScheduleView = ScheduleView.DayView;
+            Navigation.PushModalAsync(new AddNewEvent(), true);
         }
 
         private void Handle_HeaderTapped(object sender, HeaderTappedEventArgs e)

@@ -14,8 +14,7 @@
     <syncfusion:SfSchedule x:Name="schedule" 
         DataSource = "{Binding Event}"
         ScheduleView = "DayView"
-        ShowAppointmentsInline="True"
-        HeaderTapped="Handle_HeaderTapped">
+        ShowAppointmentsInline="True">
         <syncfusion:SfSchedule.BindingContext>
             <local:DayViewModel/>
         </syncfusion:SfSchedule.BindingContext>

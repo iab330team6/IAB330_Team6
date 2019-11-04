@@ -16,6 +16,8 @@ namespace LifeMate.Views
         public DayViewPage()
         {
             InitializeComponent();
+
+            schedule.CellTapped += CellTappedEventHandler;
         }
 
         private void AddItem_Clicked(object sender, EventArgs e)
@@ -26,6 +28,11 @@ namespace LifeMate.Views
         private void Handle_HeaderTapped(object sender, HeaderTappedEventArgs e)
         {
             Navigation.PushModalAsync(new CalendarPage(), true);
+        }
+
+        private void CellTappedEventHandler(object sender, CellTappedEventArgs e)
+        {
+            Navigation.PushModalAsync(new AddNewEvent(), true);
         }
     }
 }
