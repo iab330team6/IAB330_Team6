@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 using LifeMate.Models;
 using LifeMate.Views;
 using LifeMate.ViewModels;
+using Syncfusion.SfSchedule.XForms;
 
 namespace LifeMate.Views
 {
@@ -33,13 +34,18 @@ namespace LifeMate.Views
             DateTime maxDate = new DateTime(currentDate.Year + 1, currentDate.Month, currentDate.Day, 10, 0, 0);
             schedule.MaxDisplayDate = maxDate;
 
-
+            schedule.CellDoubleTapped += CellTappedEventHandler;
         }
         private void AddItem_Clicked(object sender, EventArgs e)
         {
             Random random = new Random();
             number = random.Next(0, 5);
             Navigation.PushModalAsync(new AddRandomEvent(), true);
+        }
+
+        private void CellTappedEventHandler(object sender, CellTappedEventArgs e)
+        {
+            Navigation.PushModalAsync(new AddNewEvent(), true);
         }
     }
 }

@@ -17,7 +17,7 @@ namespace LifeMate.Views
         {
             InitializeComponent();
 
-            schedule.CellTapped += CellTappedEventHandler;
+            schedule.CellDoubleTapped += CellTappedEventHandler;
         }
 
         private void AddItem_Clicked(object sender, EventArgs e)
