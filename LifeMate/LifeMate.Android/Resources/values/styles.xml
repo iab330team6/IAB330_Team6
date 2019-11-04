@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
+  <style name="Theme.Splash" parent="android:Theme">
+
+    <item name="android:windowBackground">@drawable/splashscreen</item>
+
+    <item name="android:windowNoTitle">true</item>
+
+    <item name="windowActionBar">false</item>
+
+    <item name="windowActionModeOverlay">true</item>
+
+    <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette -->
+
+    <!-- colorPrimary is used for the default action bar background -->
+
+    <item name="colorPrimary">#FFFFFF</item>
+
+  </style>
 
   <style name="MainTheme" parent="MainTheme.Base">
   </style>

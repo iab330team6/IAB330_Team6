@@ -174,7 +174,6 @@ namespace LifeMate.Models
             Random random = new Random();
             int number = random.Next(0, 4);
             col = GetColors[number];
-
             
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
