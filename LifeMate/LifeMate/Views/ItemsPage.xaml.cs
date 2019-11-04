@@ -18,6 +18,8 @@ namespace LifeMate.Views
     [DesignTimeVisible(false)]
     public partial class ItemsPage : ContentPage
     {
+
+        public static int number;
         public ItemsPage()
         {
             InitializeComponent();
@@ -31,6 +33,13 @@ namespace LifeMate.Views
             DateTime maxDate = new DateTime(currentDate.Year + 1, currentDate.Month, currentDate.Day, 10, 0, 0);
             schedule.MaxDisplayDate = maxDate;
 
+
+        }
+        private void AddItem_Clicked(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            number = random.Next(0, 5);
+            Navigation.PushModalAsync(new AddRandomEvent(), true);
         }
     }
 }

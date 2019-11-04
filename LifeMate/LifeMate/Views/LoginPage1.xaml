@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="LifeMate.Views.LoginPage1">
+             x:Class="LifeMate.Views.LoginPage1"
+             Title="Login Page">
     <ContentPage.Content>
         <StackLayout>
             <Entry Placeholder = "Username" Margin="10"></Entry>

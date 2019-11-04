@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
+using LifeMate.Views;
 using Syncfusion.XForms.DataForm;
 using Xamarin.Forms;
 namespace LifeMate.Models
@@ -16,6 +16,8 @@ namespace LifeMate.Models
         private Color _color;
 
         private List<Color> GetColors = new List<Color> { Color.Red, Color.Blue, Color.Black, Color.Green };
+
+        
 
 
         public string Subject
@@ -128,15 +130,18 @@ namespace LifeMate.Models
             }
         }
 
-        public Event(string subject, string location, DateTime startTime)
+        public Event(string subject, string location)
         {
             Subject = subject;
             Location = location;
-            StartTime = startTime;
-            EndTime = new DateTime(StartTime.Year, StartTime.Month, StartTime.Day, StartTime.Hour + 1, StartTime.Minute,
+            Date = DateTime.Now;
+            InputStartTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour + ItemsPage.number, DateTime.Now.Minute,
+                DateTime.Now
+                    .Second);
+            InputEndTime = new DateTime(StartTime.Year, StartTime.Month, StartTime.Day, StartTime.Hour + 2, StartTime.Minute,
                 StartTime
                     .Second);
-            
+
 
         }
 
@@ -155,6 +160,8 @@ namespace LifeMate.Models
             Random random = new Random();
             int number = random.Next(0, 4);
             col = GetColors[number];
+
+            
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }

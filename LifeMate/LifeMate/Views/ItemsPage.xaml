@@ -8,6 +8,9 @@
              mc:Ignorable="d"
              x:Class="LifeMate.Views.ItemsPage"
              Title="Daily View">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Surprise Me" Clicked="AddItem_Clicked"/>
+    </ContentPage.ToolbarItems>
     <syncfusion:SfSchedule x:Name="schedule" 
         DataSource = "{Binding Event}"
         ScheduleView = "WeekView"
