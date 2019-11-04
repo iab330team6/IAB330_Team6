@@ -20,10 +20,10 @@ namespace LifeMate.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Main, Title="Daily View" ,Source_name = "Calendar_pic"},
-                new HomeMenuItem {Id = MenuItemType.Calendar, Title="Monthly View" ,Source_name = "Calendar_pic"},
-                new HomeMenuItem {Id = MenuItemType.SleepCalculator, Title="Sleep Calculator" ,Source_name = "Calculator_pic"},
-                new HomeMenuItem {Id = MenuItemType.Login, Title="Login", Source_name = "Login_pic"}
+                new HomeMenuItem {Id = MenuItemType.Main, Title="Daily View" ,Source_name = "Calendar_pic.jpg"},
+                new HomeMenuItem {Id = MenuItemType.Calendar, Title="Monthly View" ,Source_name = "Calendar_pic.jpg"},
+                new HomeMenuItem {Id = MenuItemType.SleepCalculator, Title="Sleep Calculator" ,Source_name = "Calculator_pic.png"},
+                new HomeMenuItem {Id = MenuItemType.Login, Title="Login", Source_name = "Login_pic.png"}
                 
             };
 
